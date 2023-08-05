@@ -1,2 +1,2 @@
 var message = "chris"
-console.log(message);
+console.log(module);
