@@ -21,8 +21,8 @@
 	],
 	"license": "MIT",
 	"version": "0.0.1",
-	"devDependencies": {
-		"@freecodecamp/example":"1.0.1"
+	"dependencies": {
+		"@freecodecamp/example":"~1.2.13"
 	}
 	
 }
