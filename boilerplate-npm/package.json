@@ -12,5 +12,11 @@
 		"url": "https://idontknow/todo.git"
 	},
 	"author": "Goldenbrain",
-	"description": "This is my first node.js project, everyone can contribute to it."
+	"description": "This is my first node.js project, everyone can contribute to it.",
+	"keywords": [
+		"node",
+		"express",
+		"html",
+		"css"
+	]
 }
