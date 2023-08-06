@@ -24,10 +24,18 @@ let app = express();
     //     return res.status(200).json({"message": message})
     //   })
 
-    app.use((req, res, next) => {
-        let string = `${req.method} ${req.path} - ${req.ip}`;
-        console.log(string);
+    // app.use((req, res, next) => {
+    //     let string = `${req.method} ${req.path} - ${req.ip}`;
+    //     console.log(string);
+    //     next();
+    // });
+
+    app.get("/now", (req, res, next) => {
+        let time = new Date().toString();
+        req.time = time;
         next();
+    }, function(req, res) {
+        res.json({time: req.time});
     });
 
 
