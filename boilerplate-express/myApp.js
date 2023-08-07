@@ -1,19 +1,21 @@
 require('dotenv').config();
-
+let bodyParser = require('body-parser');
 let express = require('express');
 let app = express();
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
     // sending a text message to the browser
     // res.send("Hello Express");
 
     // sending a file to the browser
-    // app.get("/", function(req, res) {
-    //     absolutePath = __dirname + '/views/index.html';
-    //     res.sendFile(absolutePath);
-    // })
+    app.get("/", function(req, res) {
+        absolutePath = __dirname + '/views/index.html';
+        res.sendFile(absolutePath);
+    })
 
     // sending a static folder an putting a css file inisde
-    // app.use("/public", express.static(__dirname + "/public"));
+    app.use("/public", express.static(__dirname + "/public"));
 
     // sending a json file to the browser
     // app.get('/json', (req, res) => {
@@ -41,6 +43,16 @@ let app = express();
     app.get("/:word/echo", function(req, res){
         res.json({"echo": `${req.params.word}`})
     })
+
+    app.post('/name', function(req, res) {
+            // let string = `${req.body.first}` + ' ' + `${req.body.last}`;
+            res.json({"name": req.body.first +" "+req.body.last});
+    });
+        
+
+
+
+
 
 
 
